@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minihead"
+version = "0.2.0"
+description = "Dependency-free context compression for LLM agents, plus a token-savings report for Cursor sessions."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+tiktoken = ["tiktoken>=0.7"]   # faster token counting; the bundled tokenizer gives identical counts
+
+[project.scripts]
+minihead = "minihead.__main__:main"
+
+[tool.setuptools]
+packages = ["minihead", "minihead.compressors"]
+
+[tool.setuptools.package-data]
+minihead = ["data/o200k_base.tiktoken"]

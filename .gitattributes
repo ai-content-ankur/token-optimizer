@@ -1,0 +1,2 @@
+# keep the tokenizer file byte-identical on every OS (its sha256 is checked)
+minihead/data/*.tiktoken binary
